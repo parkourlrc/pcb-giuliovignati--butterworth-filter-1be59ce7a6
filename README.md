@@ -1,8 +1,10 @@
- 🧈 **Butterworth Low-Pass Filter Design**
+ # 🧈 **Butterworth Low-Pass Filter Design**
+
+
  ![Image](https://github.com/user-attachments/assets/74ffd5ae-d191-46c9-bfcf-be1163841ce8)
 ---
 
-## 📘 Introduction
+## Introduction
 
 A **Butterworth filter** is a type of signal processing filter designed to have a frequency response that is as flat as mathematically possible in the passband. Unlike filters that exhibit ripples or irregularities in the passband or stopband, the Butterworth filter provides a smooth and monotonic response, making it ideal for applications that require minimal signal distortion.
 
@@ -10,7 +12,7 @@ This project focuses on the design and analysis of a 7th-order Butterworth low-p
 
 ---
 
-## 📐 Project Specifications
+## Project Specifications
 
 The specifications provided for this project are summarized in the following table:
 
@@ -20,9 +22,9 @@ The specifications provided for this project are summarized in the following tab
 
 ---
 
-## 🔍 Parameter Calculation and Design Decisions
+## Parameter Calculation and Design Decisions
 
-### 🎛️ Butterworth Filter Poles
+### Butterworth Filter Poles
 
 The magnitude of the transfer function of a Butterworth filter $T(i\omega)$ is given by:
 
@@ -56,7 +58,7 @@ $R = \omega_p \cdot \left(\frac{1}{\varepsilon}\right)^{1/7} = 261.129 \cdot 10^
 
 ---
 
-### 🎚️ Pole Frequencies and Quality Factors
+### Pole Frequencies and Quality Factors
 
 Given $p_k = R \cdot (\sigma_k + i\omega_k)$, we derive:
 
@@ -76,9 +78,9 @@ Given $p_k = R \cdot (\sigma_k + i\omega_k)$, we derive:
 
 ---
 
-## 🔧 Filter Design
+## Filter Design
 
-### 🧠 Design Choices
+### Design Choices
 
 The project design involved balancing trade-offs among performance, component count, and sensitivity. The implemented solution includes three smart Sallen-Key stages, a single integrator stage, and an inverting buffer.
 
@@ -86,7 +88,7 @@ An alternative solution aimed at minimizing component usage would have included 
 
 Given the relatively non-stringent specifications, a general-purpose operational amplifier was selected, specifically the *TL072* (and *TL071*).
 
-### 🧩 Component Value Calculation
+### Component Value Calculation
 
 Following the model of the smart Sallen-Key filter (schematic shown in the following figure), the resistor and capacitor values for each stage are determined according to the following equations:
 
@@ -237,7 +239,7 @@ The following table presents the current measurements for each operational ampli
 
 
 
-## ⚡ PCB Circuit Schematic
+## PCB Circuit Schematic
 
 To ensure project completeness and replicability, the circuit schematic was transposed into KiCad, an open-source suite for electrical schematic and PCB design.
 
@@ -273,7 +275,7 @@ Before routing, trace widths were dimensioned using KiCad's **Track Width Calcul
 
 These values fully satisfy design constraints.
 
-### ✅ Additional Design Steps
+### Additional Design Steps
 
 - **ERC (Electrical Rules Check)** and **DRC (Design Rules Check)** were performed in KiCad.
 - Manufacturer constraints (e.g., JLC PCB) were input for validation.
@@ -286,7 +288,3 @@ These values fully satisfy design constraints.
 ![Image](https://github.com/user-attachments/assets/95b3d5d3-e24b-4f0b-9008-c043c5453d89)
 #### PCB view (front side) from 3d viewer
 ![Image](https://github.com/user-attachments/assets/74ffd5ae-d191-46c9-bfcf-be1163841ce8)
-#### PCB view (back side) from 3d viewer
-![Image](https://github.com/user-attachments/assets/0cc80b84-78e2-4372-899b-723c4edd710f)
-#### PCB view with selected 3d models from 3d viewer
-![Image](https://github.com/user-attachments/assets/cc4973f4-6345-475a-bf68-523a2493bea3)
